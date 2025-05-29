@@ -1,0 +1,27 @@
+{
+  "name": "backendgt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoFerreira096/BackEndGT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardoFerreira096/BackEndGT/issues"
+  },
+  "homepage": "https://github.com/LeonardoFerreira096/BackEndGT#readme",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.0"
+  }
+}
