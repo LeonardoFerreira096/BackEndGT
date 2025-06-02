@@ -1,5 +1,7 @@
-const express = require('express');
-const cartRouter = require('./src/routes/cartRouter')
+const express = require('express')
+const client = require ('./db.js')
+const cartRouter = require('./src/routes/cartRouter.js')
+
 
 const app = express();
 const port = 3000;
