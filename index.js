@@ -1,5 +1,4 @@
 const express = require('express')
-const client = require ('./db.js')
 const cartRouter = require('./src/routes/cartRouter.js')
 
 
