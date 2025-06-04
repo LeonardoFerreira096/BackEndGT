@@ -11,7 +11,7 @@ async function inserirItens() {
         }
 
 
-        const result = await inserirItensService(cart_id, product_id,quantity)
+        const result = await inserirItensService(cart_id, product_id, quantity)
         res.status(201).json(result)
     } catch (error) {
         console.log("Erro ao inserir item no carrinho", error)
