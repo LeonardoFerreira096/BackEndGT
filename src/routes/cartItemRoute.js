@@ -1,13 +1,15 @@
 const router = require('express').Router();
-const { inserirItens, alterarItens, deletarItens } = require('../controllers/carteItemController.js')
+const { inserirItens, alterarItens, deletarItens} = require('../controllers/cartItemController')
 
 
-//insere itens no carrinho
-router.post('/item',inserirItens)
+ //insere itens no carrinho
+router.post('/item', inserirItens)
+
+ //Alterar a quantidade item carrinho
+router.put('/item/:id', alterarItens) 
+
+//deleta item
+router.delete('/item/:id', deletarItens) 
 
 
-//Alterar a quantidade item carrinho
-router.put('/item/:id', alterarItens)
-
-//deletar item 
-router.delete('/item/:id', deletarItens)
+module.exports = router
