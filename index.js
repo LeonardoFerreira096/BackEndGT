@@ -1,3 +1,5 @@
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger-output.json');
 const express = require('express');
 const cartRoute = require('./src/routes/cartRoute.js')
 const cartItemRoute = require('./src/routes/cartItemRoute.js')
@@ -9,19 +11,27 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(express.json())
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.get('/', (req, res) => {
-   res.send('Hello world') 
+   //#swagger.tags = ['documentacao']
+   //#swagger.summary = 'Redireciona para documentacao API'
+   res.redirect('/docs')
 })
 
-app.get('/boas-vindas', (req, res) => {
-   res.send('Seja bem-vindo') 
-})
-
-app.use('/v1/cart', cartRoute)
-app.use('/v1/item', cartItemRoute)
-app.use('/v1/user', userRoute)
+app.use('/v1/cart',
+   //#swagger.tags = ['carrinho']
+   //#swagger.summary = 'Redireciona para documentacao API'
+   cartRoute)
+app.use('/v1/item',
+   //#swagger.tags = ['Carrinho-Item']
+   //#swagger.summary = 'Redireciona para documentacao API'
+   cartItemRoute)
+app.use('/v1/user',
+   //#swagger.tags = ['Usuario']
+   //#swagger.summary = 'Redireciona para documentacao API'
+   userRoute)
 
 app.listen(port, () => {
-    console.log(`Servidor rodando na url http://localhost:${port}`)
+   console.log(`API documentation: http://localhost:${port}`)
 })

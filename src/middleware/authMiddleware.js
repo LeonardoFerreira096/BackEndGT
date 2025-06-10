@@ -3,9 +3,9 @@ const jwt = require("jsonwebtoken")
 const SECRET = process.env.JWT_SECRET
 
 function autentificarToken(req, res, next) {
-    const authHeader = req.authHeaders['authorization']
-    const token = authHeader && authHeader.split('')[1]
-    if (toke === null) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    if (token === null) {
         return res.status(401).json({ message: "Token não encontrado" })
     }
 
