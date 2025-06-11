@@ -4,11 +4,17 @@ const express = require('express');
 const cartRoute = require('./src/routes/cartRoute.js')
 const cartItemRoute = require('./src/routes/cartItemRoute.js')
 const userRoute = require('./src/routes/userRoute.js')
+const cors = require('cors')
 require('dotenv').config()
 
 
 const app = express();
 const port = process.env.PORT;
+
+app.use(cors({
+   origin: "http://localhost:5173",
+})
+)
 
 app.use(express.json())
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
